@@ -2,7 +2,7 @@ import time
 import subprocess
 import os
 
-MAPS_PATHS = ['--mapFilePath=./Maps/updated_dungeon_map_100x100.csv', '--mapFilePath=./Maps/medium_dungeon_map_300x300.csv', '--mapFilePath=./MockMaps/1000x1000board.csv']
+MAPS_PATHS = ['--mapFilePath=./Maps/updated_dungeon_map_100x100.csv', '--mapFilePath=./Maps/medium_dungeon_map_300x300.csv', '--mapFilePath=./Maps/large_dungeon_map_500x500.csv']
 ITERATIONS = [10000, 10000, 10000]
 REPETITIONS = [20, 1, 1]
 
