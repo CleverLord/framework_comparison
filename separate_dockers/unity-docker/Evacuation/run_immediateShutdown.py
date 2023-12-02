@@ -13,7 +13,7 @@ for x,map_path in enumerate(MAPS_PATHS):
         subprocess.run(["./Evacuation_LinuxServerBuild.x86_64", map_path, "--immediateShutdown=true"],
                 stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
         if time.time()-lastPrintTime>10:
-            print("map: <<{}>>, rep: <<{}>>, time elapsed: <<{}>>".format(map_path, y, time.time()-start), flush=True)
+            print("Working on Evacuation Bootups!, map: <<{}>>, rep: <<{}>>, time elapsed: <<{}>>".format(map_path, y, time.time()-start), flush=True)
             lastPrintTime=time.time()
     end = time.time()
     total_time = end - start    

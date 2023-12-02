@@ -10,12 +10,13 @@ for x,map_path in enumerate(MAPS_PATHS):
     lastPrintTime=0
     reps=REPETITIONS[x]
     for y in range(reps):
-        targetStdout = subprocess.DEVNULL if y>=2 else subprocess.STDOUT
-        targetStderr = subprocess.STDOUT
-        subprocess.run(["./Evacuation_LinuxServerBuild.x86_64", map_path, "--repetitionsCount=1"],
-                stdout=targetStdout, stderr=targetStderr)
+        if y >= 2:
+            subprocess.run(["./Evacuation_LinuxServerBuild.x86_64", map_path, "--repetitionsCount=1"],
+                    stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+        else:
+            subprocess.run(["./Evacuation_LinuxServerBuild.x86_64", map_path, "--repetitionsCount=1"])
         if time.time()-lastPrintTime>10:
-            print("map: <<{}>>, rep: <<{}>>, time elapsed: <<{}>>".format(map_path, y, time.time()-start), flush=True)
+            print("Working on Evacuation E2E!, map: <<{}>>, rep: <<{}>>, time elapsed: <<{}>>".format(map_path, y, time.time()-start), flush=True)
             lastPrintTime=time.time()
     end = time.time()
     total_time = end - start

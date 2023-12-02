@@ -12,14 +12,15 @@ for x,map_path in enumerate(MAPS_PATHS):
     reps=REPETITIONS[x]
     its=ITERATIONS[x]
     for y in range(reps):
-        targetStdout = subprocess.DEVNULL if y>=2 else subprocess.STDOUT
-        targetStderr = subprocess.STDOUT
-        subprocess.run(["./GameOfLife_LinuxServerBuild.x86_64", map_path, "--iterationCount="+str(its), "--repetitionsCount=1"],
-                stdout=targetStdout, stderr=targetStderr)
+        if y >= 2:
+            subprocess.run(["./GameOfLife_LinuxServerBuild.x86_64", map_path, "--iterationCount="+str(its), "--repetitionsCount=1"],
+                    stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+        else:
+            subprocess.run(["./GameOfLife_LinuxServerBuild.x86_64", map_path, "--iterationCount="+str(its), "--repetitionsCount=1"])
         if time.time()-lastPrintTime>10:
-            print("map: <<{}>>, rep: <<{}>>, time elapsed: <<{}>>".format(map_path, y, time.time()-start), flush=True)
+            print("Working on GameOfLife E2E!, map: <<{}>>, rep: <<{}>>, time elapsed: <<{}>>".format(map_path, y, time.time()-start), flush=True)
             lastPrintTime=time.time()
     end = time.time()
     total_time = end - start
-    fps = ((total_time / reps)*1000/ its)+"e-3"
-    print("Finished GameOfLife E2E!, map: <<{}>>, rep: <<{}>>, time: <<{}>>".format(map_path, reps, total_time), flush=True)
+    fps = ((total_time / reps)*1000 / its)
+    print("Finished GameOfLife E2E!, map: <<{}>>, rep: <<{}>>, time: <<{}>>, fps <<{}e-3>>".format(map_path, reps, total_time, fps), flush=True)
