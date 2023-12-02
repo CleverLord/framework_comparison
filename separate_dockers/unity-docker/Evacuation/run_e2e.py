@@ -5,6 +5,7 @@ import os
 MAPS_PATHS = ['--mapFilePath=./EvacuationMaps/board_1_500.csv', '--mapFilePath=./EvacuationMaps/board_2_500.csv', '--mapFilePath=./EvacuationMaps/board_3_100.csv']
 REPETITIONS= [1, 10, 1000]
 
+print("Running Evacuation E2E! Current time: " + time.strftime("%H:%M:%S", time.localtime()), flush=True)
 for x,map_path in enumerate(MAPS_PATHS):
     start = time.time()
     lastPrintTime=0
@@ -22,3 +23,4 @@ for x,map_path in enumerate(MAPS_PATHS):
     total_time = end - start
     sfs = (total_time / reps) 
     print("Finished Evacuation E2E!, map: <<{}>>, rep: <<{}>>, time: <<{}>>, seconds per simulation<<{}>>".format(map_path, reps, total_time, sfs), flush=True)
+    print("Current time: " + time.strftime("%H:%M:%S", time.localtime()), flush=True)

@@ -5,6 +5,7 @@ import os
 MAPS_PATHS = ['--mapFilePath=./Maps/updated_dungeon_map_100x100.csv', '--mapFilePath=./Maps/medium_dungeon_map_300x300.csv', '--mapFilePath=./Maps/large_dungeon_map_500x500.csv']
 REPETITIONS= [30, 30, 30]
 
+print("Running Ants Bootups! Current time: " + time.strftime("%H:%M:%S", time.localtime()), flush=True)
 for x,map_path in enumerate(MAPS_PATHS):
     start = time.time()
     lastPrintTime=0
@@ -18,3 +19,4 @@ for x,map_path in enumerate(MAPS_PATHS):
     end = time.time()
     total_time = end - start    
     print("Finished Ants Bootups!, map: <<{}>>, rep: <<{}>>, time: <<{}>>".format(map_path, reps, total_time), flush=True)
+    print("Current time: " + time.strftime("%H:%M:%S", time.localtime()), flush=True)

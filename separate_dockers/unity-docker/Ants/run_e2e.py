@@ -6,6 +6,7 @@ MAPS_PATHS = ['--mapFilePath=./Maps/updated_dungeon_map_100x100.csv', '--mapFile
 ITERATIONS = [10000, 10000, 10000]
 REPETITIONS = [20, 1, 1]
 
+print("Running Ants E2E! Current time: " + time.strftime("%H:%M:%S", time.localtime()), flush=True
 for x,map_path in enumerate(MAPS_PATHS):
     start = time.time()
     lastPrintTime=0
@@ -24,3 +25,4 @@ for x,map_path in enumerate(MAPS_PATHS):
     total_time = end - start    
     spf = (total_time / reps) * 10000 / its
     print("Finished Ants E2E!, map: <<{}>>, rep: <<{}>>, time: <<{}>>, seconds per frame<<{}e-4>>".format(map_path, reps, total_time, spf), flush=True)
+    print("Current time: " + time.strftime("%H:%M:%S", time.localtime()), flush=True)

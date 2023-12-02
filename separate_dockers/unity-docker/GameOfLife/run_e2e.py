@@ -6,6 +6,7 @@ MAPS_PATHS = ['--mapFilePath=./MockMaps/10x10board.csv', '--mapFilePath=./MockMa
 ITERATIONS = [10000, 1000, 100]
 REPETITIONS= [100, 10, 10]
 
+print("Running GameOfLife E2E! Current time: " + time.strftime("%H:%M:%S", time.localtime()), flush=True)
 for x,map_path in enumerate(MAPS_PATHS):
     start = time.time()
     lastPrintTime=0
@@ -24,3 +25,4 @@ for x,map_path in enumerate(MAPS_PATHS):
     total_time = end - start
     spf = ((total_time / reps)*1000 / its)
     print("Finished GameOfLife E2E!, map: <<{}>>, rep: <<{}>>, time: <<{}>>, seconds per frame <<{}e-3>>".format(map_path, reps, total_time, spf), flush=True)
+    print("Current time: " + time.strftime("%H:%M:%S", time.localtime()), flush=True)
