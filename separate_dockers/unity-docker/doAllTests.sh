@@ -7,6 +7,7 @@ chmod +x GameOfLife_LinuxServerBuild.x86_64
 echo "building GameOfLife docker image"
 docker build -t gameoflife__unity_brainbuild .
 echo "running GameOfLife docker image"
+date +"Current time: %Y-%m-%d %H:%M:%S"
 docker run gameoflife__unity_brainbuild
 echo "done with GameOfLife"
 cd ..
@@ -20,6 +21,7 @@ chmod +x Evacuation_LinuxServerBuild.x86_64
 echo "building Evacuation docker image"
 docker build -t evacuation__unity_brainbuild .
 echo "running Evacuation docker image"
+date +"Current time: %Y-%m-%d %H:%M:%S"
 docker run evacuation__unity_brainbuild
 echo "done with Evacuation"
 cd ..
@@ -33,6 +35,7 @@ chmod +x Ants_LinuxServerBuild.x86_64
 echo "building Ants docker image"
 docker build -t ants__unity_brainbuild .
 echo "running Ants docker image"
+date +"Current time: %Y-%m-%d %H:%M:%S"
 docker run ants__unity_brainbuild
 echo "done with Ants"
 cd ..
