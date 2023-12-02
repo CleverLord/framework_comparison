@@ -10,7 +10,7 @@ for x,map_path in enumerate(MAPS_PATHS):
     lastPrintTime=0
     reps=REPETITIONS[x]
     for y in range(reps):
-        subprocess.run(["./LinuxServerBuild.x86_64", map_path, "--immediateShutdown=true"],
+        subprocess.run(["./GameOfLife_LinuxServerBuild.x86_64", map_path, "--immediateShutdown=true"],
                        stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
         if time.time()-lastPrintTime>10:
             print("map: <<{}>>, rep: <<{}>>, time elapsed: <<{}>>".format(map_path, y, time.time()-start), flush=True)

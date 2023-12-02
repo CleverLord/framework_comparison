@@ -1,6 +1,6 @@
 cd GameOfLife
 chmod +x run_all.sh
-chmod +x LinuxServerBuild.x86_64
+chmod +x GameOfLife_LinuxServerBuild.x86_64
 docker build -t gameoflife__unity_brainbuild .
 docker run gameoflife__unity_brainbuild
 cd ..
