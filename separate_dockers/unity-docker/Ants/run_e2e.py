@@ -6,7 +6,7 @@ MAPS_PATHS = ['--mapFilePath=./Maps/updated_dungeon_map_100x100.csv', '--mapFile
 ITERATIONS = [10000, 10000, 10000]
 REPETITIONS = [20, 1, 1]
 
-print("Running Ants E2E! Current time: " + time.strftime("%H:%M:%S", time.localtime()), flush=True
+print("Running Ants E2E! Current time: " + time.strftime("%H:%M:%S", time.localtime()), flush=True)
 for x,map_path in enumerate(MAPS_PATHS):
     start = time.time()
     lastPrintTime=0
