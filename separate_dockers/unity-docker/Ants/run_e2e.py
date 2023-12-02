@@ -12,7 +12,7 @@ for x,map_path in enumerate(MAPS_PATHS):
     reps=REPETITIONS[x]
     its=ITERATIONS[x]
     for y in range(reps):
-        subprocess.run(["./Ants_LinuxServerBuild.x86_64", map_path,"--iterationCount="+its, "--repetitionsCount=1"])
+        subprocess.run(["./Ants_LinuxServerBuild.x86_64", map_path,"--iterationCount="+str(its), "--repetitionsCount=1"])
         if time.time()-lastPrintTime>10:
             print("map: <<{}>>, rep: <<{}>>, time elapsed: <<{}>>".format(map_path, y, time.time()-start), flush=True)
             lastPrintTime=time.time()
