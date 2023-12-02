@@ -19,4 +19,4 @@ for x,map_path in enumerate(MAPS_PATHS):
     end = time.time()
     total_time = end - start    
     fps = (total_time / reps)+"e-4"
-    print("Finished Bootups!, map: <<{}>>, rep: <<{}>>, time: <<{}>>, fps<<{}>>".format(map_path, reps, total_time, fps), flush=True)
+    print("Finished E2E!, map: <<{}>>, rep: <<{}>>, time: <<{}>>, fps<<{}>>".format(map_path, reps, total_time, fps), flush=True)

@@ -17,4 +17,4 @@ for x,map_path in enumerate(MAPS_PATHS):
             lastPrintTime=time.time()
     end = time.time()
     total_time = end - start    
-    print("Finished Bootups!, map: <<{}>>, rep: <<{}>>, time: <<{}>>".format(map_path, reps, total_time), flush=True)
+    print("Finished Ants Bootups!, map: <<{}>>, rep: <<{}>>, time: <<{}>>".format(map_path, reps, total_time), flush=True)
