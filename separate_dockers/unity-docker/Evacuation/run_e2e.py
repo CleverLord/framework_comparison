@@ -20,5 +20,5 @@ for x,map_path in enumerate(MAPS_PATHS):
             lastPrintTime=time.time()
     end = time.time()
     total_time = end - start
-    fps = (total_time / reps) 
-    print("Finished Evacuation E2E!, map: <<{}>>, rep: <<{}>>, time: <<{}>>, fps<<{}>>".format(map_path, reps, total_time, fps), flush=True)
+    sfs = (total_time / reps) 
+    print("Finished Evacuation E2E!, map: <<{}>>, rep: <<{}>>, time: <<{}>>, seconds per simulation<<{}>>".format(map_path, reps, total_time, sfs), flush=True)

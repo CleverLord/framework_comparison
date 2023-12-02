@@ -22,5 +22,5 @@ for x,map_path in enumerate(MAPS_PATHS):
             lastPrintTime=time.time()
     end = time.time()
     total_time = end - start
-    fps = ((total_time / reps)*1000 / its)
-    print("Finished GameOfLife E2E!, map: <<{}>>, rep: <<{}>>, time: <<{}>>, fps <<{}e-3>>".format(map_path, reps, total_time, fps), flush=True)
+    spf = ((total_time / reps)*1000 / its)
+    print("Finished GameOfLife E2E!, map: <<{}>>, rep: <<{}>>, time: <<{}>>, seconds per frame <<{}e-3>>".format(map_path, reps, total_time, spf), flush=True)
