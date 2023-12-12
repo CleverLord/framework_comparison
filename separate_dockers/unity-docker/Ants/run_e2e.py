@@ -2,9 +2,15 @@ import time
 import subprocess
 import os
 
-MAPS_PATHS = ['--mapFilePath=./Maps/updated_dungeon_map_100x100.csv', '--mapFilePath=./Maps/medium_dungeon_map_300x300.csv', '--mapFilePath=./Maps/large_dungeon_map_500x500.csv']
-ITERATIONS = [10000, 10000, 10000]
-REPETITIONS = [20, 1, 1]
+MAPS_PATHS = ['--mapFilePath=./Maps/updated_dungeon_map_100x100.csv','--mapFilePath=./Maps/updated_dungeon_map_100x100.csv','--mapFilePath=./Maps/updated_dungeon_map_100x100.csv',
+               '--mapFilePath=./Maps/medium_dungeon_map_300x300.csv','--mapFilePath=./Maps/medium_dungeon_map_300x300.csv','--mapFilePath=./Maps/medium_dungeon_map_300x300.csv', 
+               '--mapFilePath=./Maps/large_dungeon_map_500x500.csv','--mapFilePath=./Maps/large_dungeon_map_500x500.csv','--mapFilePath=./Maps/large_dungeon_map_500x500.csv']
+ITERATIONS = [10,100,100,
+                10,100,100,
+                10,100,100]
+REPETITIONS = [2,2,2,
+                2,2,2,
+                2,2,2]
 
 print("Running Ants E2E! Current time: " + time.strftime("%H:%M:%S", time.localtime()), flush=True)
 for x,map_path in enumerate(MAPS_PATHS):
@@ -14,7 +20,7 @@ for x,map_path in enumerate(MAPS_PATHS):
     its=ITERATIONS[x]
     for y in range(reps):
         if y >= 2:
-            subprocess.run(["./Ants_LinuxServerBuild.x86_64", map_path,"--iterationCount="+str(its), "--repetitionsCount=1"],
+            subprocess.run(["./Ants_LinuxServerBuild.x86_64", map_path,"--iterationCount="+str(its), "--repetitionsCount=1","printInterval=15" ],
                     stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
         else:
             subprocess.run(["./Ants_LinuxServerBuild.x86_64", map_path,"--iterationCount="+str(its), "--repetitionsCount=1"])

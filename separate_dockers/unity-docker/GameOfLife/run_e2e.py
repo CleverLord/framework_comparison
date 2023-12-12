@@ -2,9 +2,15 @@ import time
 import subprocess
 import os
 
-MAPS_PATHS = ['--mapFilePath=./MockMaps/10x10board.csv', '--mapFilePath=./MockMaps/100x100board.csv', '--mapFilePath=./MockMaps/1000x1000board.csv']
-ITERATIONS = [10000, 1000, 100]
-REPETITIONS= [100, 10, 10]
+MAPS_PATHS = ['--mapFilePath=./MockMaps/10x10board.csv', 
+              '--mapFilePath=./MockMaps/100x100board.csv', '--mapFilePath=./MockMaps/100x100board.csv',
+              '--mapFilePath=./MockMaps/1000x1000board.csv','--mapFilePath=./MockMaps/1000x1000board.csv','--mapFilePath=./MockMaps/1000x1000board.csv']
+ITERATIONS = [ 100000,
+               100, 1000,
+               10, 100, 1000]
+REPETITIONS= [ 2,
+               2, 2,
+               2, 2, 2 ]
 
 print("Running GameOfLife E2E! Current time: " + time.strftime("%H:%M:%S", time.localtime()), flush=True)
 for x,map_path in enumerate(MAPS_PATHS):
