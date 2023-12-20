@@ -20,7 +20,7 @@ for x,map_path in enumerate(MAPS_PATHS):
     its=ITERATIONS[x]
     for y in range(reps):
         if y >= 2:
-            subprocess.run(["./Ants_LinuxServerBuild.x86_64", map_path,"--iterationCount="+str(its), "--repetitionsCount=1","printInterval=15" ],
+            subprocess.run(["./Ants_LinuxServerBuild.x86_64", map_path,"--iterationCount="+str(its), "--repetitionsCount=1","--printInterval=15" ],
                     stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
         else:
             subprocess.run(["./Ants_LinuxServerBuild.x86_64", map_path,"--iterationCount="+str(its), "--repetitionsCount=1"])
